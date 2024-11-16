@@ -12,7 +12,7 @@ df['vote'] = df['race'] + ' ' + df['gender'] + ': ' + df['candidate']
 harris = df[df['candidate'] == 'harris']
 harris['color rgb'] = '99, 110, 250'
 for i, index in enumerate(harris.index):
-    harris.loc[index, 'alpha'] = 1 - (i/len(harris.index))
+    harris.loc[index, 'alpha'] = 0.95 * (1 - i/len(harris.index))
 
 
 trump = df[df['candidate'] == 'trump']
