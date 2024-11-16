@@ -45,5 +45,15 @@ fig.update_layout(
             size=24,
         ),
     ),
+    annotations=[
+        pgo.layout.Annotation(
+            text='Source: https://www.nbcnews.com/politics/2024-elections/exit-polls',
+            xanchor='left',
+            yanchor='bottom',
+            showarrow=False,
+            x=0,
+            y=0,
+        )
+    ]
 )
 fig.write_html('index.html', auto_open=True)
