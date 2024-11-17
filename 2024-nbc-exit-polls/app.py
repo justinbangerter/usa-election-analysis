@@ -6,7 +6,7 @@ df['harris'] = df['percent'] * df['harris']
 df['trump'] = df['percent'] * df['trump']
 df = df.drop('percent', axis=1)
 df = df.melt(id_vars=['race', 'gender'], var_name='candidate', value_name='total')
-df.fillna('m&f2', inplace=True)
+df.fillna('m&f', inplace=True)
 df['vote'] = df['race'] + ' ' + df['gender'] + ': ' + df['candidate']
 
 harris = df[df['candidate'] == 'harris']
@@ -54,6 +54,8 @@ fig.update_layout(
             x=0,
             y=0,
         )
-    ]
+    ],
+    height=900,
+    width=900,
 )
 fig.write_html('index.html', auto_open=True)
